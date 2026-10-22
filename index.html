@@ -1,0 +1,122 @@
+---
+layout: default
+body_class: home
+---
+{%- assign pi = site.data.people.pi -%}
+<section class="hero" aria-labelledby="hero-title">
+  <canvas class="hero-field" aria-hidden="true"></canvas>
+  <div class="wrap hero-inner">
+    <p class="hero-lab">{{ site.full_title }} at {{ site.university }}</p>
+    <h1 id="hero-title">Reasoning about data that is never quite exact.</h1>
+    <p class="hero-sub">We build databases, sensor networks and learning systems that can work with imprecise, incomplete and uncertain information, and still give useful answers.</p>
+    <p class="hero-actions">
+      <a class="btn btn-solid" href="{{ '/research/' | relative_url }}">See our research</a>
+      <a class="btn btn-line" href="{{ '/people/' | relative_url }}">Meet the team</a>
+    </p>
+  </div>
+  <div class="wrap"><p class="hero-readout" aria-hidden="true">
+    <span class="readout-q">Fuzzy query: sensors near <span class="readout-target">a moving point</span></span>
+    <span class="readout-r"><b data-readout-count>0</b> with <i>μ</i> ≥ 0.5</span>
+  </p></div>
+</section>
+
+<section class="section areas" aria-labelledby="areas-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="areas-title">What we work on</h2>
+      <p>Each area is drawn as a fuzzy membership curve: the shape of how much something belongs.</p>
+    </div>
+    <ul class="area-grid">
+      {% for area in site.data.research_areas %}
+      <li class="area">
+        {% include membership.html shape=area.shape %}
+        <h3><a href="{{ '/research/' | relative_url }}#{{ area.id }}">{{ area.name }}</a></h3>
+        <p>{{ area.summary }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section split">
+  <div class="wrap split-inner">
+    <div class="split-col" aria-labelledby="news-title">
+      <div class="col-head">
+        <h2 id="news-title">Latest news</h2>
+        <a href="{{ '/news/' | relative_url }}">All news</a>
+      </div>
+      <ul class="news-list">
+        {% for item in site.data.news limit:4 %}
+          {% include news-item.html item=item %}
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="split-col" aria-labelledby="pubs-title">
+      <div class="col-head">
+        <h2 id="pubs-title">Selected publications</h2>
+        <a href="{{ '/publications/' | relative_url }}">All publications</a>
+      </div>
+      {% assign selected = site.data.publications | where: "selected", true | sort: "year" | reverse %}
+      <ol class="pub-list">
+        {% for pub in selected limit:4 %}
+          {% include publication.html pub=pub %}
+        {% endfor %}
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section team-band" aria-labelledby="team-title">
+  <div class="wrap team-inner">
+    <div class="team-pi">
+      {% include avatar.html person=pi size="lg" index=1 %}
+      <div>
+        <h2 id="team-title">Led by {{ pi.name }}</h2>
+        <p>{{ pi.title }}, {{ site.university }}. Associate Editor of the IEEE Transactions on Fuzzy Systems, recipient of the IBM Faculty Award (2011).</p>
+        <dl class="figures">
+          {% for h in pi.highlights %}
+          <div><dt>{{ h.label }}</dt><dd>{{ h.figure }}</dd></div>
+          {% endfor %}
+        </dl>
+      </div>
+    </div>
+    <div class="team-members">
+      <ul class="avatar-row" aria-label="Current lab members">
+        {% for m in site.data.people.members %}
+        <li title="{{ m.name }}">{% include avatar.html person=m size="sm" index=forloop.index0 %}</li>
+        {% endfor %}
+      </ul>
+      <p>{{ site.data.people.members | size }} current students and research assistants, and alumni now in academia and industry.</p>
+      <a class="btn btn-line" href="{{ '/people/' | relative_url }}">Meet the team</a>
+    </div>
+  </div>
+</section>
+
+{% if site.posts.size > 0 %}
+<section class="section" aria-labelledby="blog-title">
+  <div class="wrap">
+    <div class="col-head">
+      <h2 id="blog-title">From the lab blog</h2>
+      <a href="{{ '/blog/' | relative_url }}">All posts</a>
+    </div>
+    <ul class="post-list">
+      {% for post in site.posts limit:3 %}
+      <li>
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          <span class="post-link-title">{{ post.title }}</span>
+          <span class="post-link-meta">{{ post.author }}, {{ post.date | date: "%d %b %Y" }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
+
+<section class="section join" aria-labelledby="join-title">
+  <div class="wrap join-inner">
+    <h2 id="join-title">Want to work with us?</h2>
+    <p>We welcome PhD, MSc and undergraduate students, and research assistants, interested in databases, fuzzy logic, sensor networks or data science. Send a short note about your interests and your CV.</p>
+    <a class="btn btn-solid" href="mailto:{{ site.email }}?subject=Joining%20Yazici%20Lab">Email Prof. Yazıcı</a>
+  </div>
+</section>

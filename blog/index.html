@@ -1,0 +1,27 @@
+---
+layout: page
+title: Lab blog
+curve: gaussian
+permalink: /blog/
+lede: Notes from lab members on their research, conferences, tools and student life.
+---
+<section class="section-tight">
+  <div class="wrap narrow">
+    {% if site.posts.size > 0 %}
+    <ul class="blog-list">
+      {% for post in site.posts %}
+      <li>
+        <article>
+          <p class="post-meta"><span>{{ post.author }}</span><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%d %B %Y" }}</time></p>
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          <p>{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
+          {% if post.tags.size > 0 %}<ul class="tags">{% for t in post.tags %}<li>{{ t }}</li>{% endfor %}</ul>{% endif %}
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p class="empty">No posts yet. Lab members can add one by following the guide in CONTENT-GUIDE.md.</p>
+    {% endif %}
+  </div>
+</section>

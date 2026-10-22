@@ -1,0 +1,13 @@
+{%- comment -%}
+  Usage: {% include avatar.html person=member size="lg" %}
+{%- endcomment -%}
+{%- assign p = include.person -%}
+{%- if p.photo and p.photo != "" -%}
+<img class="avatar avatar-{{ include.size | default: 'md' }}" src="{{ '/assets/img/people/' | append: p.photo | relative_url }}" alt="{{ p.name }}" loading="lazy">
+{%- else -%}
+{%- assign words = p.name | remove: "Prof. " | remove: "Dr. " | split: " " -%}
+{%- assign first = words | first | slice: 0 -%}
+{%- assign last = words | last | slice: 0 -%}
+{%- assign hue = include.index | default: p.name.size | modulo: 4 -%}
+<span class="avatar avatar-{{ include.size | default: 'md' }} avatar-tone-{{ hue }}" aria-hidden="true">{{ first }}{{ last }}</span>
+{%- endif -%}

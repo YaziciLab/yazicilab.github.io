@@ -1,0 +1,39 @@
+---
+layout: page
+title: Publications
+curve: triangle
+permalink: /publications/
+lede: Books, journal articles and conference papers from the lab. For the complete list, see Prof. Yazıcı's Google Scholar profile.
+---
+{%- assign pubs = site.data.publications | sort: "year" | reverse -%}
+{%- assign by_year = pubs | group_by: "year" -%}
+<section class="section-tight">
+  <div class="wrap">
+    <div class="filters" data-filter-root>
+      <label class="search">
+        <span class="visually-hidden">Search publications</span>
+        <input type="search" placeholder="Search titles, authors, venues" data-filter-search>
+      </label>
+      <div class="chips" role="group" aria-label="Filter by type">
+        <button type="button" class="chip" aria-pressed="true" data-filter-type="all">All</button>
+        <button type="button" class="chip" aria-pressed="false" data-filter-type="journal">Journal</button>
+        <button type="button" class="chip" aria-pressed="false" data-filter-type="conference">Conference</button>
+        <button type="button" class="chip" aria-pressed="false" data-filter-type="book">Book</button>
+        <button type="button" class="chip" aria-pressed="false" data-filter-type="chapter">Chapter</button>
+      </div>
+      <p class="filter-status" role="status" data-filter-status></p>
+    </div>
+
+    <div data-filter-items>
+      {% for y in by_year %}
+      <section class="year-group" data-group>
+        <h2 class="year">{{ y.name }}</h2>
+        <ol class="pub-list">
+          {% for pub in y.items %}{% include publication.html pub=pub %}{% endfor %}
+        </ol>
+      </section>
+      {% endfor %}
+    </div>
+    <p class="empty" hidden data-filter-empty>No publications match. Try a different word or choose All.</p>
+  </div>
+</section>

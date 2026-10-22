@@ -1,0 +1,8 @@
+<li class="news-item" data-type="{{ include.item.type }}">
+  <time datetime="{{ include.item.date | date: '%Y-%m-%d' }}">{{ include.item.date | date: "%d %b %Y" }}</time>
+  <div>
+    <span class="news-type news-type-{{ include.item.type }}">{{ include.item.type | capitalize }}</span>
+    {% include sample-tag.html item=include.item %}
+    <div class="news-text">{{ include.item.text | markdownify }}</div>
+  </div>
+</li>

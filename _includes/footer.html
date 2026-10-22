@@ -1,0 +1,25 @@
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-id">
+      <a class="wordmark" href="{{ '/' | relative_url }}">{% include logo.svg %}<span>{{ site.title }}</span></a>
+      <p>{{ site.full_title }}<br>{{ site.department }}, {{ site.university }}</p>
+    </div>
+    <div class="footer-contact">
+      <h2>Contact</h2>
+      <p>{{ site.address }}</p>
+      <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+    </div>
+    <div class="footer-links">
+      <h2>Elsewhere</h2>
+      <ul>
+        {% if site.social.linkedin != "" %}<li><a href="{{ site.social.linkedin }}">LinkedIn</a></li>{% endif %}
+        {% if site.social.github != "" %}<li><a href="{{ site.social.github }}">GitHub</a></li>{% endif %}
+        {% if site.social.scholar != "" %}<li><a href="{{ site.social.scholar }}">Google Scholar</a></li>{% endif %}
+        <li><a href="{{ '/blog/feed.xml' | relative_url }}">Blog feed (RSS)</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <p>© {{ site.time | date: "%Y" }} {{ site.full_title }}</p>
+  </div>
+</footer>

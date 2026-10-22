@@ -1,0 +1,55 @@
+---
+layout: page
+title: Research
+curve: trapezoid
+permalink: /research/
+lede: Our work sits where databases, fuzzy logic and sensing meet. We care about systems that can be honest about what they don't know.
+---
+<section class="section-tight">
+  <div class="wrap">
+    <ul class="area-detail">
+      {% for area in site.data.research_areas %}
+      <li id="{{ area.id }}">
+        {% include membership.html shape=area.shape %}
+        <div>
+          <h2>{{ area.name }}</h2>
+          <p>{{ area.detail }}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{% assign groups = "ongoing|Ongoing projects,completed|Completed projects" | split: "," %}
+{% for g in groups %}
+{% assign parts = g | split: "|" %}
+{% assign list = site.data.projects | where: "status", parts[0] %}
+{% if list.size > 0 %}
+<section class="section-tight" aria-labelledby="proj-{{ parts[0] }}">
+  <div class="wrap">
+    <h2 class="block-title" id="proj-{{ parts[0] }}">{{ parts[1] }}</h2>
+    <ul class="projects">
+      {% for p in list %}
+      {% assign area = site.data.research_areas | where: "id", p.area | first %}
+      <li class="project project-{{ p.status }}">
+        <p class="project-years">{{ p.years }}</p>
+        <div>
+          <h3>{{ p.title }}{% include sample-tag.html item=p %}</h3>
+          <p>{{ p.summary }}</p>
+          <dl class="project-meta">
+            {% if area %}<div><dt>Area</dt><dd><a href="#{{ area.id }}">{{ area.name }}</a></dd></div>{% endif %}
+            {% if p.members.size > 0 %}<div><dt>Team</dt><dd>{{ p.members | join: ", " }}</dd></div>{% endif %}
+            {% if p.funding and p.funding != "" %}<div><dt>Funding</dt><dd>{{ p.funding }}</dd></div>{% endif %}
+          </dl>
+          {% if p.links.size > 0 %}
+          <p class="pub-links">{% for l in p.links %}<a href="{{ l.url }}">{{ l.label }}</a>{% endfor %}</p>
+          {% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
+{% endfor %}

@@ -1,0 +1,57 @@
+# ------------------------------------------------------------------
+# Research projects. `status` is either `ongoing` or `completed`.
+# `area` must match an `id` in research_areas.yml.
+# `members` are free text; use the same names as in people.yml.
+# ------------------------------------------------------------------
+
+- title: Fuzzy querying for multimedia sensor networks
+  status: ongoing
+  years: 2024 – present
+  area: sensor-networks
+  summary: >-
+    A query layer that lets users ask imprecise questions ("unusual activity
+    near the north gate in the last hour") over data collected by audio and
+    video sensors, and returns ranked answers with confidence levels.
+  members: [Adnan Yazıcı, Aigerim Sample, Timur Template]
+  funding: Example research grant
+  links: []
+  sample: true
+
+- title: Multimodal event recognition at the edge
+  status: ongoing
+  years: 2025 – present
+  area: data-science
+  summary: >-
+    Compact deep learning models that combine sound, image and scalar sensor
+    readings to recognise events on low-power devices, deciding locally what
+    is worth sending to the base station.
+  members: [Adnan Yazıcı, Daniyar Example, Nursultan Mock]
+  funding: ""
+  links: []
+  sample: true
+
+- title: Uncertainty-aware spatial indexing
+  status: ongoing
+  years: 2025 – present
+  area: fuzzy-modeling
+  summary: >-
+    Index structures for spatial objects whose boundaries or positions are
+    only approximately known, so that range and nearest-neighbour queries
+    stay fast without discarding uncertainty.
+  members: [Adnan Yazıcı, Madina Placeholder]
+  funding: ""
+  links: []
+  sample: true
+
+- title: Fuzzy object-oriented database modelling
+  status: completed
+  years: 2019 – 2023
+  area: intelligent-databases
+  summary: >-
+    A modelling framework and prototype that represents vague class
+    membership and imprecise attribute values directly in an object-oriented
+    database, with a query language to match.
+  members: [Adnan Yazıcı, Former Member One]
+  funding: ""
+  links: []
+  sample: true

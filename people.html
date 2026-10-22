@@ -1,0 +1,79 @@
+---
+layout: page
+title: People
+curve: gaussian
+permalink: /people/
+lede: The students, researchers and alumni of the lab.
+---
+{%- assign pi = site.data.people.pi -%}
+{%- assign n = 0 -%}
+<section class="section-tight">
+  <div class="wrap pi-card">
+    {% include avatar.html person=pi size="xl" index=1 %}
+    <div class="pi-body">
+      <h2>{{ pi.name }}</h2>
+      <p class="pi-title">{{ pi.title }}, {{ site.university }}</p>
+      <div class="prose">{{ pi.bio | markdownify }}</div>
+      <p class="pi-links">
+        <a href="mailto:{{ pi.email }}">{{ pi.email }}</a>
+        {% for l in pi.links %}{% if l.url != "" %}<a href="{{ l.url }}">{{ l.label }}</a>{% endif %}{% endfor %}
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight" aria-labelledby="members-title">
+  <div class="wrap">
+    <h2 class="block-title" id="members-title">Current members</h2>
+    {% for role in site.data.people.roles %}
+      {% assign group = site.data.people.members | where: "role", role %}
+      {% if group.size > 0 %}
+      <div class="role-group">
+        <h3>{{ role }}</h3>
+        <ul class="people-grid">
+          {% for m in group %}
+          <li class="person">
+            {% assign n = n | plus: 1 %}{% include avatar.html person=m size="md" index=n %}
+            <div>
+              <p class="person-name">{{ m.name }}{% include sample-tag.html item=m %}</p>
+              {% if m.topic %}<p class="person-topic">{{ m.topic }}</p>{% endif %}
+              <p class="person-links">
+                {% if m.email and m.email != "" %}<a href="mailto:{{ m.email }}">Email</a>{% endif %}
+                {% if m.linkedin and m.linkedin != "" %}<a href="{{ m.linkedin }}">LinkedIn</a>{% endif %}
+              </p>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+{% if site.data.people.alumni.size > 0 %}
+<section class="section-tight" aria-labelledby="alumni-title">
+  <div class="wrap">
+    <h2 class="block-title" id="alumni-title">Alumni</h2>
+    <div class="table-scroll">
+      <table class="alumni">
+        <thead><tr><th scope="col">Name</th><th scope="col">Degree</th><th scope="col">Year</th><th scope="col">Now</th></tr></thead>
+        <tbody>
+          {% assign alumni = site.data.people.alumni | sort: "year" | reverse %}
+          {% for a in alumni %}
+          <tr><td>{{ a.name }}{% include sample-tag.html item=a %}</td><td>{{ a.degree }}</td><td>{{ a.year }}</td><td>{{ a.now }}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section join" id="join" aria-labelledby="join-title">
+  <div class="wrap join-inner">
+    <h2 id="join-title">Join the lab</h2>
+    <p>We take on PhD and MSc students, research assistants and undergraduate researchers. Email Prof. Yazıcı with a few lines on what you'd like to work on, your CV, and your transcript if you're a student.</p>
+    <a class="btn btn-solid" href="mailto:{{ site.email }}?subject=Joining%20Yazici%20Lab">Email Prof. Yazıcı</a>
+  </div>
+</section>

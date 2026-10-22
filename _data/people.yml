@@ -1,0 +1,125 @@
+# ------------------------------------------------------------------
+# Everyone in the lab.
+#
+# Photos: put a square image (at least 400x400) in assets/img/people/
+# and set `photo: jane-doe.jpg`. Without a photo, initials are shown.
+#
+# `sample: true` marks placeholder entries. Delete the entry, or delete
+# that line once the details are real.
+# ------------------------------------------------------------------
+
+pi:
+  name: Prof. Dr. Adnan Yazıcı
+  short_name: Adnan Yazıcı
+  title: Professor and Chair, Department of Computer Science
+  photo: ""
+  email: adnan.yazici@nu.edu.kz
+  links:
+    - label: Google Scholar
+      url: ""
+    - label: LinkedIn
+      url: ""
+  bio: >-
+    Prof. Dr. Adnan Yazıcı received his Ph.D. in Computer Science from the
+    Department of Computer Science, Tulane University, Louisiana, USA, in 1991.
+    He is the Chair of the Department of Computer Science in the School of
+    Science and Technology, Nazarbayev University. He has published over 200
+    international technical papers and co-authored or edited three books:
+    *Fuzzy Database Modeling* (Springer), *Fuzzy Logic in its 50th Year: New
+    Developments, Directions, and Challenges* (Springer), and *Uncertainty
+    Approaches for Spatial Data Modeling and Processing: A Decision Support
+    Perspective* (Springer).
+
+
+    His current research interests include intelligent database systems,
+    wireless multimedia sensor networks, data science, and fuzzy database
+    modelling. He received the IBM Faculty Award in 2011 and the Parlar
+    Foundation's Young Investigator Award in 2001. He was Conference Co-Chair
+    of the 23rd IEEE International Conference on Data Engineering (2007), the
+    38th International Conference on Very Large Data Bases (2012), and the 23rd
+    IEEE International Conference on Fuzzy Systems (2015). He is currently an
+    Associate Editor of the IEEE Transactions on Fuzzy Systems and a member of
+    ACM, the IEEE Computational Intelligence Society, and the Fuzzy Systems
+    Technical Committee.
+  highlights:
+    - figure: "200+"
+      label: international papers
+    - figure: "3"
+      label: books with Springer
+    - figure: "1991"
+      label: Ph.D., Tulane University
+
+# Role groups, in the order they appear on the People page.
+# Each member's `role` must match one of these names exactly.
+roles:
+  - Postdoctoral researchers
+  - PhD students
+  - MSc students
+  - Research assistants
+  - Undergraduate researchers
+
+members:
+  - name: Aigerim Sample
+    role: PhD students
+    topic: Fuzzy querying over multimedia sensor data
+    email: ""
+    linkedin: ""
+    photo: ""
+    sample: true
+
+  - name: Daniyar Example
+    role: PhD students
+    topic: Multimodal event recognition with deep learning
+    email: ""
+    linkedin: ""
+    photo: ""
+    sample: true
+
+  - name: Madina Placeholder
+    role: MSc students
+    topic: Uncertainty-aware indexing for spatial data
+    email: ""
+    linkedin: ""
+    photo: ""
+    sample: true
+
+  - name: Timur Template
+    role: Research assistants
+    topic: Sensor network simulation and data collection
+    email: ""
+    linkedin: ""
+    photo: ""
+    sample: true
+
+  - name: Alina Demo
+    role: Research assistants
+    topic: Lab website and outreach
+    email: ""
+    linkedin: ""
+    photo: ""
+    sample: true
+
+  - name: Nursultan Mock
+    role: Undergraduate researchers
+    topic: Audio classification for environmental monitoring
+    email: ""
+    linkedin: ""
+    photo: ""
+    sample: true
+
+alumni:
+  - name: Former Member One
+    degree: PhD
+    year: 2024
+    now: Assistant Professor, Example University
+    sample: true
+  - name: Former Member Two
+    degree: MSc
+    year: 2023
+    now: Data Scientist, Example Company
+    sample: true
+  - name: Former Member Three
+    degree: MSc
+    year: 2022
+    now: PhD student, Example Institute
+    sample: true

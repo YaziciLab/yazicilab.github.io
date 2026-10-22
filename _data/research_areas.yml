@@ -1,0 +1,50 @@
+# The lab's main research themes.
+# `shape` picks the small curve drawn next to each area:
+#   triangle | trapezoid | gaussian | sigmoid
+# Each one is a classic fuzzy membership function.
+
+- id: intelligent-databases
+  name: Intelligent database systems
+  shape: trapezoid
+  summary: >-
+    Query processing, indexing and modelling for databases that need to reason,
+    not just retrieve.
+  detail: >-
+    We design data models and query engines that can answer questions phrased
+    the way people actually ask them, such as "recent", "nearby" or "similar",
+    and that can rank answers by how well they match rather than by a strict
+    yes or no.
+
+- id: fuzzy-modeling
+  name: Fuzzy database modelling
+  shape: triangle
+  summary: >-
+    Representing vague and imprecise information so it can be stored,
+    queried and reasoned about.
+  detail: >-
+    Building on the lab's long-running work in fuzzy logic, we develop
+    conceptual and logical models (fuzzy object-oriented, fuzzy relational,
+    fuzzy spatial) in which uncertainty is part of the data, not an error to be
+    cleaned away.
+
+- id: sensor-networks
+  name: Wireless multimedia sensor networks
+  shape: gaussian
+  summary: >-
+    Detecting and classifying events from audio, video and scalar sensors
+    spread across a field.
+  detail: >-
+    We study how networks of low-power sensors can fuse multimodal readings,
+    decide what is worth transmitting, and store and query what they observe,
+    with applications in environmental and security monitoring.
+
+- id: data-science
+  name: Data science and deep learning
+  shape: sigmoid
+  summary: >-
+    Learning models for multimedia, text and sensor data, with attention to
+    uncertainty in inputs and outputs.
+  detail: >-
+    We apply and extend deep learning for classification, multimodal fusion
+    and event recognition, and combine it with fuzzy reasoning where decisions
+    need to stay interpretable.

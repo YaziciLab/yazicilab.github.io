@@ -1,0 +1,64 @@
+# ------------------------------------------------------------------
+# Site settings for Yazici Lab
+# After changing this file, restart `bundle exec jekyll serve`
+# (GitHub Pages picks it up automatically on the next push).
+# ------------------------------------------------------------------
+
+title: Yazici Lab
+full_title: Dr Yazici's Research Lab
+description: >-
+  Dr Yazici's Research Lab at Nazarbayev University studies how databases,
+  sensor networks and learning systems can work with information that is
+  imprecise, incomplete or uncertain.
+lang: en
+
+# The address the site will live at.
+#  - Using the free GitHub address?   url: "https://YOUR-ORG.github.io"
+#  - Using a custom/university domain? url: "https://yazicilab.nu.edu.kz"
+# Leave baseurl empty unless the site lives in a sub-folder
+# (e.g. https://YOUR-ORG.github.io/website -> baseurl: "/website").
+url: ""
+baseurl: ""
+
+university: Nazarbayev University
+department: Department of Computer Science
+address: Nazarbayev University, 53 Kabanbay Batyr Ave, Astana, Kazakhstan
+email: adnan.yazici@nu.edu.kz
+
+# Links shown in the footer. Leave a value empty ("") to hide it.
+social:
+  linkedin: ""        # e.g. https://www.linkedin.com/company/yazici-lab
+  github: ""          # e.g. https://github.com/yazici-lab
+  scholar: ""         # Google Scholar profile of Prof. Yazici
+
+# Show the small "Sample entry" tag on placeholder content.
+# Keep this true until every sample entry has been replaced.
+show_sample_tags: true
+
+# --- Blog -----------------------------------------------------------
+permalink: /blog/:year/:month/:title/
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+# --- Build ----------------------------------------------------------
+markdown: kramdown
+kramdown:
+  input: GFM
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+feed:
+  path: blog/feed.xml
+
+exclude:
+  - README.md
+  - CONTENT-GUIDE.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .github

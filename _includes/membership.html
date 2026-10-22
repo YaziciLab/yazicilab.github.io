@@ -1,0 +1,14 @@
+{%- comment -%}
+  Draws a small fuzzy membership curve.
+  Usage: {% include membership.html shape="gaussian" %}
+{%- endcomment -%}
+{%- case include.shape -%}
+  {%- when "triangle" -%}{%- assign d = "M4 44 L22 44 L40 8 L58 44 L76 44" -%}
+  {%- when "trapezoid" -%}{%- assign d = "M4 44 L16 44 L30 8 L50 8 L64 44 L76 44" -%}
+  {%- when "sigmoid" -%}{%- assign d = "M4 44 C 30 44, 34 44, 40 26 S 50 8, 76 8" -%}
+  {%- else -%}{%- assign d = "M4 44 C 22 44, 28 8, 40 8 S 58 44, 76 44" -%}
+{%- endcase -%}
+<svg class="mf mf-{{ include.shape }}" viewBox="0 0 80 52" aria-hidden="true" focusable="false">
+  <line x1="4" y1="46" x2="76" y2="46" class="mf-axis"/>
+  <path d="{{ d }}" class="mf-curve"/>
+</svg>

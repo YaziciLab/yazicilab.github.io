@@ -1,0 +1,24 @@
+---
+layout: page
+title: News
+curve: sigmoid
+permalink: /news/
+lede: Awards, accepted papers, conference talks and lab announcements.
+---
+<section class="section-tight">
+  <div class="wrap narrow">
+    <div class="filters" data-filter-root>
+      <div class="chips" role="group" aria-label="Filter by type">
+        <button type="button" class="chip" aria-pressed="true" data-filter-type="all">All</button>
+        <button type="button" class="chip" aria-pressed="false" data-filter-type="achievement">Achievements</button>
+        <button type="button" class="chip" aria-pressed="false" data-filter-type="conference">Conferences</button>
+        <button type="button" class="chip" aria-pressed="false" data-filter-type="announcement">Announcements</button>
+      </div>
+      <p class="filter-status" role="status" data-filter-status></p>
+    </div>
+    <ul class="news-list news-list-full" data-filter-items>
+      {% for item in site.data.news %}{% include news-item.html item=item %}{% endfor %}
+    </ul>
+    <p class="empty" hidden data-filter-empty>Nothing in this category yet.</p>
+  </div>
+</section>

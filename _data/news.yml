@@ -1,0 +1,31 @@
+# ------------------------------------------------------------------
+# News, achievements and conference trips. Newest first.
+#
+# type: achievement | conference | announcement
+# date: YYYY-MM-DD
+# text: one or two sentences; Markdown links work: [text](https://...)
+# ------------------------------------------------------------------
+
+- date: 2026-10-20
+  type: announcement
+  text: The lab has a new website. Students can now publish posts on the lab blog.
+
+- date: 2026-09-15
+  type: achievement
+  text: Aigerim Sample's paper was accepted to an example journal.
+  sample: true
+
+- date: 2026-07-08
+  type: conference
+  text: Daniyar Example presented our work on multimodal event recognition at an example international conference.
+  sample: true
+
+- date: 2026-05-30
+  type: achievement
+  text: Madina Placeholder received a best student paper award at an example workshop.
+  sample: true
+
+- date: 2026-03-01
+  type: announcement
+  text: We are looking for research assistants for the spring semester. See the People page for how to apply.
+  sample: true

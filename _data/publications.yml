@@ -1,0 +1,76 @@
+# ------------------------------------------------------------------
+# Publications, newest first is not required: the site sorts by year.
+#
+# type:     journal | conference | book | chapter
+# selected: true  -> also shown on the home page (keep it to 3–4)
+# links:    any of pdf, doi, code, slides (leave out the ones you don't have)
+#
+# Tip: you can export from Google Scholar / Zotero to BibTeX and convert
+# with a small script later; for now, copy entries by hand.
+# ------------------------------------------------------------------
+
+# Books from Prof. Yazıcı's bio. Please double-check authors and years.
+- title: "Fuzzy Logic in its 50th Year: New Developments, Directions and Challenges"
+  authors: C. Kahraman, U. Kaymak, A. Yazıcı (Eds.)
+  venue: Studies in Fuzziness and Soft Computing, Springer
+  year: 2016
+  type: book
+  selected: true
+  links: {}
+
+- title: "Uncertainty Approaches for Spatial Data Modeling and Processing: A Decision Support Perspective"
+  authors: J. Kacprzyk, F. E. Petry, A. Yazıcı (Eds.)
+  venue: Studies in Computational Intelligence, Springer
+  year: 2010
+  type: book
+  selected: true
+  links: {}
+
+- title: Fuzzy Database Modeling
+  authors: A. Yazıcı, R. George
+  venue: Studies in Fuzziness and Soft Computing, Physica-Verlag (Springer)
+  year: 1999
+  type: book
+  selected: false
+  links: {}
+
+# --- Sample entries: replace with real papers -----------------------
+- title: A sample journal article on fuzzy querying over sensor data
+  authors: A. Sample, T. Template, A. Yazıcı
+  venue: Example Journal of Intelligent Information Systems
+  year: 2026
+  type: journal
+  selected: true
+  links:
+    doi: ""
+    pdf: ""
+  sample: true
+
+- title: A sample conference paper on multimodal event recognition
+  authors: D. Example, N. Mock, A. Yazıcı
+  venue: Example International Conference on Data Engineering
+  year: 2025
+  type: conference
+  selected: false
+  links:
+    pdf: ""
+    code: ""
+  sample: true
+
+- title: A sample paper on uncertainty-aware spatial indexing
+  authors: M. Placeholder, A. Yazıcı
+  venue: Example IEEE Conference on Fuzzy Systems
+  year: 2025
+  type: conference
+  selected: false
+  links: {}
+  sample: true
+
+- title: A sample journal article on fuzzy object-oriented modelling
+  authors: F. Member, A. Yazıcı
+  venue: Example Transactions on Knowledge and Data Engineering
+  year: 2023
+  type: journal
+  selected: false
+  links: {}
+  sample: true

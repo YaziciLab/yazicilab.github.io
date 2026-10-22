@@ -1,0 +1,13 @@
+{%- assign pub = include.pub -%}
+<li class="pub" data-type="{{ pub.type }}" data-search="{{ pub.title | append: ' ' | append: pub.authors | append: ' ' | append: pub.venue | downcase | escape }}">
+  <p class="pub-title">{{ pub.title }}{% include sample-tag.html item=pub %}</p>
+  <p class="pub-authors">{{ pub.authors | replace: "A. Yazıcı", "<strong>A. Yazıcı</strong>" }}</p>
+  <p class="pub-venue"><em>{{ pub.venue }}</em>, {{ pub.year }}<span class="pub-kind">{{ pub.type | capitalize }}</span></p>
+  {%- assign has_links = false -%}
+  {%- for l in pub.links -%}{%- if l[1] != "" -%}{%- assign has_links = true -%}{%- endif -%}{%- endfor -%}
+  {%- if has_links -%}
+  <p class="pub-links">
+    {%- for l in pub.links -%}{%- if l[1] != "" -%}<a href="{{ l[1] }}">{{ l[0] | upcase | replace: "CODE", "Code" | replace: "SLIDES", "Slides" }}</a>{%- endif -%}{%- endfor -%}
+  </p>
+  {%- endif -%}
+</li>
